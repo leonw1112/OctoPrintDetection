@@ -5,9 +5,7 @@ Octoprint-Detector2 is a detection plugin that runs in locally your browser usin
 It is completely free without any monthly subscriptions or one time fees unlike some similar plugins. If it detects an error it sounds the alarm and sends you an email with the latest image snapshot of the print.
 
 ## setup
-Install via the [Plugin Manager](https://docs.octoprint.org/en/master/bundledplugins/pluginmanager.html) or manually using latest release here:
-
-    https://github.com/mikulash/Octoprint-detector2/releases
+Install via the [Plugin Manager](https://docs.octoprint.org/en/master/bundledplugins/pluginmanager.html) 
 
 ## Configuration
 
