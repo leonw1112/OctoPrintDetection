@@ -1,5 +1,6 @@
 # OctoPrint-Detector2
 
+# DISCLAIMER: ALL CREDITS GO TO https://github.com/mikulash/Octoprint-detector2 // I JUST ADDED AN PAUSE FUNCTION
 Octoprint-Detector2 is a detection plugin that runs in locally your browser using Tensorflow.js and emails you if it detects some spaghetti, stringing or blobs on your print. All you need is an email account and a PC.
 It is completely free without any monthly subscriptions or one time fees unlike some similar plugins. If it detects an error it sounds the alarm and sends you an email with the latest image snapshot of the print.
 
