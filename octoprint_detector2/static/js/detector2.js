@@ -270,7 +270,7 @@ function alarm() {
     audio.play();
 }
 function pause() {
-    if (self.user.confidence <= 75) {
+    if (self.user.confidence >= 75) {
         self._plugin._printer.cancel_print();
     }
 }
