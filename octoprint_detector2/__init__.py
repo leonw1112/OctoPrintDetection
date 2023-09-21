@@ -102,7 +102,8 @@ class Detector2Plugin(octoprint.plugin.SettingsPlugin,
         }
 
     def get_update_information(self):
-        return {
+        return {};
+        """
             "detector2": {
                 "displayName": "Detector",
                 "displayVersion": self._plugin_version,
@@ -112,8 +113,9 @@ class Detector2Plugin(octoprint.plugin.SettingsPlugin,
                 "current": self._plugin_version,
                 "pip": "https://github.com/mikulash/OctoPrint-Detector2/archive/{target_version}.zip",
             }
+        
         }
-
+"""
     def sendEmail(self, content):
         data = self.data
         password = data['password'].decode('utf-8')
