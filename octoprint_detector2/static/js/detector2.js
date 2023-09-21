@@ -186,7 +186,8 @@ $(function () {
                         );
                     }
                     if (self.alarmCounter < 3) {
-                        alarm();
+                        self.alarm();
+                        self.pause();
                         self.emailSent = true;
                         self.sendEmail = false;
                         self.alarmCounter++;
@@ -248,6 +249,36 @@ $(function () {
             console.log("x: " + x + " y: " + y, "|", color);
             self.objectHueColor = color;
         };
+
+        self.alarm = function () {
+            // alarm file is from https://www.youtube.com/watch?v=iNpXCzaWW1s
+            let audio = new Audio("./plugin/detector2/static/alarm.mp3");
+            audio.play();
+        };
+
+        self.pause = function () {
+            if (parseInt(self.user.confidence, 10) >= 75) {
+                //self._plugin._printer.cancel_print();
+
+                $.ajax({
+                    url: API_BASEURL + "api/job",
+                    type: "GET",
+                    dataType: "json",
+                    data: { command: "cancel" },
+                    contentType: "application/json; charset=UTF-8",
+                    success: function (response) {
+                        console.log("job cancel command sucessful");
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log(
+                            "cancel job command send failed",
+                            textStatus,
+                            errorThrown
+                        );
+                    },
+                });
+            }
+        };
     }
 
     OCTOPRINT_VIEWMODELS.push({
@@ -263,14 +294,3 @@ $(function () {
         ],
     });
 });
-
-function alarm() {
-    // alarm file is from https://www.youtube.com/watch?v=iNpXCzaWW1s
-    let audio = new Audio("./plugin/detector2/static/alarm.mp3");
-    audio.play();
-}
-function pause() {
-    if (self.user.confidence <= 75) {
-        self._plugin._printer.cancel_print();
-    }
-}
