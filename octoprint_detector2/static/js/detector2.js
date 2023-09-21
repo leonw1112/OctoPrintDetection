@@ -294,3 +294,17 @@ $(function () {
         ],
     });
 });
+<<<<<<< HEAD
+=======
+
+function alarm() {
+    // alarm file is from https://www.youtube.com/watch?v=iNpXCzaWW1s
+    let audio = new Audio("./plugin/detector2/static/alarm.mp3");
+    audio.play();
+}
+function pause() {
+    if (self.user.confidence >= 75) {
+        self._plugin._printer.cancel_print();
+    }
+}
+>>>>>>> 15f4820bc354541b90e4c6816368a73cadd679c0
